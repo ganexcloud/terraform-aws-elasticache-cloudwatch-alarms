@@ -25,6 +25,7 @@ resource "aws_cloudwatch_metric_alarm" "cpu_utilization_too_high" {
   alarm_description   = "Average CPU utilization over last ${var.cpu_utilization_too_high-period} seconds too high"
   alarm_actions       = var.sns_topic_arn
   ok_actions          = var.sns_topic_arn
+  tags                = var.tags
   dimensions = {
     CacheClusterId = "${element(var.cache_cluster_id, count.index)}"
   }
@@ -43,6 +44,7 @@ resource "aws_cloudwatch_metric_alarm" "engine_cpu_utilization_too_high" {
   alarm_description   = "Average CPU utilization over last ${var.cpu_utilization_too_high-period} seconds too high"
   alarm_actions       = var.sns_topic_arn
   ok_actions          = var.sns_topic_arn
+  tags                = var.tags
   dimensions = {
     CacheClusterId = "${element(var.cache_cluster_id, count.index)}"
   }
@@ -61,6 +63,7 @@ resource "aws_cloudwatch_metric_alarm" "currconnections_too_high" {
   alarm_description   = "Average Current Connections have been greater than ${local.thresholds["CurrConnectionsThreshold"]} for at least ${var.currconnections_too_high-datapoint} seconds"
   alarm_actions       = var.sns_topic_arn
   ok_actions          = var.sns_topic_arn
+  tags                = var.tags
   dimensions = {
     CacheClusterId = "${element(var.cache_cluster_id, count.index)}"
   }
@@ -79,6 +82,7 @@ resource "aws_cloudwatch_metric_alarm" "memory_utilization_too_high" {
   alarm_description   = "Average Memory utilization over last ${var.memory_utilization_too_high-period} seconds too high"
   alarm_actions       = var.sns_topic_arn
   ok_actions          = var.sns_topic_arn
+  tags                = var.tags
   dimensions = {
     CacheClusterId = "${element(var.cache_cluster_id, count.index)}"
   }
@@ -97,6 +101,7 @@ resource "aws_cloudwatch_metric_alarm" "swap_usage_too_high" {
   alarm_description   = "Average Swap usage over last ${var.swap_usage_too_high-period} seconds too high"
   alarm_actions       = var.sns_topic_arn
   ok_actions          = var.sns_topic_arn
+  tags                = var.tags
   dimensions = {
     CacheClusterId = "${element(var.cache_cluster_id, count.index)}"
   }
@@ -116,6 +121,7 @@ resource "aws_cloudwatch_metric_alarm" "evictions_too_high" {
   alarm_description   = "Average Evictions over last ${var.evictions_too_high-period} seconds too high"
   alarm_actions       = var.sns_topic_arn
   ok_actions          = var.sns_topic_arn
+  tags                = var.tags
   dimensions = {
     CacheClusterId = "${element(var.cache_cluster_id, count.index)}"
   }

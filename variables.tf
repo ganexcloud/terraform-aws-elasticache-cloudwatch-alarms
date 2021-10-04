@@ -169,3 +169,9 @@ variable "evictions_too_high-period" {
   description = "Period check to alarm (in seconds)"
   default     = "600"
 }
+
+variable "tags" {
+  description = "(Optional) A map of tags to assign to the all resources"
+  type        = map(string)
+  default     = {}
+}
