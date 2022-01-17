@@ -1,0 +1,107 @@
+data "aws_iam_account_alias" "current" {}
+
+locals {
+  alarm_name_prefix = title(var.alarm_name_prefix == "" ? data.aws_iam_account_alias.current.account_alias : var.alarm_name_prefix)
+  thresholds = {
+    CPUUtilizationThreshold    = min(max(var.cpu_utilization_threshold, 0), 100)
+    EvictionsThreshold         = max(var.evictions_threshold, 0)
+    CurrConnectionsThreshold   = max(var.currconnections_threshold, 0)
+    MemoryUtilizationThreshold = min(max(var.memory_utilization_threshold, 0), 100)
+    SwapUsageThreshold         = max(var.swap_usage_threshold, 0)
+  }
+}
+
+resource "aws_cloudwatch_metric_alarm" "cpu_utilization_too_high" {
+  count               = var.cpu_utilization_too_high-alarm == "true" ? length(var.id) : 0
+  alarm_name          = "[${title(local.alarm_name_prefix)}] elasticache-${element(var.id, count.index)}-CPUUtilizationTooHigh"
+  comparison_operator = var.cpu_utilization_too_high-comparison_operator
+  evaluation_periods  = var.cpu_utilization_too_high-datapoint
+  metric_name         = "CPUUtilization"
+  namespace           = "AWS/ElastiCache"
+  period              = var.cpu_utilization_too_high-period
+  statistic           = "Average"
+  threshold           = local.thresholds["CPUUtilizationThreshold"]
+  alarm_description   = "Average CPU utilization over last ${var.cpu_utilization_too_high-period} seconds too high"
+  alarm_actions       = var.sns_topic_arn
+  ok_actions          = var.sns_topic_arn
+  tags                = var.tags
+  dimensions = {
+    CacheClusterId = "${element(var.id, count.index)}"
+  }
+}
+
+resource "aws_cloudwatch_metric_alarm" "currconnections_too_high" {
+  count               = var.currconnections_too_high-alarm == "true" ? length(var.id) : 0
+  alarm_name          = "[${title(local.alarm_name_prefix)}] elasticache-${element(var.id, count.index)}-CurrConnectionsTooHigh"
+  comparison_operator = var.currconnections_too_high-comparison_operator
+  evaluation_periods  = var.currconnections_too_high-datapoint
+  metric_name         = "CurrConnections"
+  namespace           = "AWS/ElastiCache"
+  period              = var.currconnections_too_high-period
+  statistic           = "Average"
+  threshold           = local.thresholds["CurrConnectionsThreshold"]
+  alarm_description   = "Average Current Connections have been greater than ${local.thresholds["CurrConnectionsThreshold"]} for at least ${var.currconnections_too_high-datapoint} seconds"
+  alarm_actions       = var.sns_topic_arn
+  ok_actions          = var.sns_topic_arn
+  tags                = var.tags
+  dimensions = {
+    CacheClusterId = "${element(var.id, count.index)}"
+  }
+}
+
+resource "aws_cloudwatch_metric_alarm" "memory_utilization_too_high" {
+  count               = var.memory_utilization_too_high-alarm == "true" ? length(var.id) : 0
+  alarm_name          = "[${title(local.alarm_name_prefix)}] elasticache-${element(var.id, count.index)}-MemoryUtilizationTooHigh"
+  comparison_operator = var.memory_utilization_too_high-comparison_operator
+  evaluation_periods  = var.memory_utilization_too_high-datapoint
+  metric_name         = "CPUUtilization"
+  namespace           = "AWS/ElastiCache"
+  period              = var.memory_utilization_too_high-period
+  statistic           = "Average"
+  threshold           = local.thresholds["MemoryUtilizationThreshold"]
+  alarm_description   = "Average Memory utilization over last ${var.memory_utilization_too_high-period} seconds too high"
+  alarm_actions       = var.sns_topic_arn
+  ok_actions          = var.sns_topic_arn
+  tags                = var.tags
+  dimensions = {
+    CacheClusterId = "${element(var.id, count.index)}"
+  }
+}
+
+resource "aws_cloudwatch_metric_alarm" "swap_usage_too_high" {
+  count               = var.memory_utilization_too_high-alarm == "true" ? length(var.id) : 0
+  alarm_name          = "[${title(local.alarm_name_prefix)}] elasticache-${element(var.id, count.index)}-SwapUsageTooHigh"
+  comparison_operator = var.swap_usage_too_high-comparison_operator
+  evaluation_periods  = var.swap_usage_too_high-datapoint
+  metric_name         = "CPUUtilization"
+  namespace           = "AWS/ElastiCache"
+  period              = var.swap_usage_too_high-period
+  statistic           = "Average"
+  threshold           = local.thresholds["SwapUsageThreshold"]
+  alarm_description   = "Average Swap usage over last ${var.swap_usage_too_high-period} seconds too high"
+  alarm_actions       = var.sns_topic_arn
+  ok_actions          = var.sns_topic_arn
+  tags                = var.tags
+  dimensions = {
+    CacheClusterId = "${element(var.id, count.index)}"
+  }
+}
+
+resource "aws_cloudwatch_metric_alarm" "evictions_too_high" {
+  count               = var.evictions_too_high-alarm == "true" ? length(var.id) : 0
+  alarm_name          = "[${title(local.alarm_name_prefix)}] elasticache-${element(var.id, count.index)}-EvictionsTooHigh"
+  comparison_operator = var.evictions_too_high-comparison_operator
+  evaluation_periods  = var.evictions_too_high-datapoint
+  metric_name         = "CPUUtilization"
+  namespace           = "AWS/ElastiCache"
+  period              = var.evictions_too_high-period
+  statistic           = "Average"
+  threshold           = local.thresholds["EvictionsThreshold"]
+  alarm_description   = "Average Evictions over last ${var.evictions_too_high-period} seconds too high"
+  alarm_actions       = var.sns_topic_arn
+  ok_actions          = var.sns_topic_arn
+  tags                = var.tags
+  dimensions = {
+    CacheClusterId = "${element(var.id, count.index)}"
+  }
+}
