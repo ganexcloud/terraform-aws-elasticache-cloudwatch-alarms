@@ -50,6 +50,18 @@ variable "evictions_threshold" {
   default     = 100
 }
 
+variable "network_bandwidth_out_allowance_exceeded_threshold" {
+  description = "The maximum bandwidth out exceeded."
+  type        = number
+  default     = 100
+}
+
+variable "network_bandwidth_in_allowance_exceeded_threshold" {
+  description = "The maximum bandwidth in exceeded."
+  type        = number
+  default     = 100
+}
+
 variable "cpu_utilization_too_high-alarm" {
   description = "Enable Alarm to metric: cpu_utilization_too_high"
   default     = "true"
@@ -168,6 +180,46 @@ variable "evictions_too_high-datapoint" {
 variable "evictions_too_high-period" {
   description = "Period check to alarm (in seconds)"
   default     = "600"
+}
+
+variable "network_bandwidth_out_allowance_exceeded-alarm" {
+  description = "Enable Alaarm to metric: network_bandwidth_out_allowance_exceeded"
+  default     = "true"
+}
+
+variable "network_bandwidth_out_allowance_exceeded-comparison_operator" {
+  description = "Comparison_operator to alarm"
+  default     = "GreaterThanThreshold"
+}
+
+variable "network_bandwidth_out_allowance_exceeded-datapoint" {
+  description = "Datapoint check to alarm"
+  default     = "1"
+}
+
+variable "network_bandwidth_out_allowance_exceeded-period" {
+  description = "Period check to alarm (in seconds)"
+  default     = "300"
+}
+
+variable "network_bandwidth_in_allowance_exceeded-alarm" {
+  description = "Enable Alaarm to metric: network_bandwidth_in_allowance_exceeded"
+  default     = "true"
+}
+
+variable "network_bandwidth_in_allowance_exceeded-comparison_operator" {
+  description = "Comparison_operator to alarm"
+  default     = "GreaterThanThreshold"
+}
+
+variable "network_bandwidth_in_allowance_exceeded-datapoint" {
+  description = "Datapoint check to alarm"
+  default     = "1"
+}
+
+variable "network_bandwidth_in_allowance_exceeded-period" {
+  description = "Period check to alarm (in seconds)"
+  default     = "300"
 }
 
 variable "tags" {
