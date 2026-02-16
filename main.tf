@@ -133,7 +133,7 @@ resource "aws_cloudwatch_metric_alarm" "network_bandwidth_out_allowance_exceeded
   alarm_name          = "[${title(local.alarm_name_prefix)}] elasticache-${element(var.cache_cluster_id, count.index)}-NetworkBandwidthOutAllowanceExceeded"
   comparison_operator = var.network_bandwidth_out_allowance_exceeded-comparison_operator
   evaluation_periods  = var.network_bandwidth_out_allowance_exceeded-datapoint
-  metric_name         = "CPUUtilization"
+  metric_name         = "NetworkBandwidthOutAllowanceExceeded"
   namespace           = "AWS/ElastiCache"
   period              = var.network_bandwidth_out_allowance_exceeded-period
   statistic           = "Average"
@@ -152,7 +152,7 @@ resource "aws_cloudwatch_metric_alarm" "network_bandwidth_in_allowance_exceeded"
   alarm_name          = "[${title(local.alarm_name_prefix)}] elasticache-${element(var.cache_cluster_id, count.index)}-NetworkBandwidthInAllowanceExceeded"
   comparison_operator = var.network_bandwidth_in_allowance_exceeded-comparison_operator
   evaluation_periods  = var.network_bandwidth_in_allowance_exceeded-datapoint
-  metric_name         = "CPUUtilization"
+  metric_name         = "NetworkBandwidthInAllowanceExceeded"
   namespace           = "AWS/ElastiCache"
   period              = var.network_bandwidth_in_allowance_exceeded-period
   statistic           = "Average"
