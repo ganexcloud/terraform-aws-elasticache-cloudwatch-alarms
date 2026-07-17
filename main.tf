@@ -38,7 +38,7 @@ resource "aws_cloudwatch_metric_alarm" "engine_cpu_utilization_too_high" {
   alarm_name          = "[${title(local.alarm_name_prefix)}] elasticache-${element(var.cache_cluster_id, count.index)}-EngineCPUUtilizationTooHigh"
   comparison_operator = var.engine_cpu_utilization_too_high-comparison_operator
   evaluation_periods  = var.engine_cpu_utilization_too_high-datapoint
-  metric_name         = "CPUUtilization"
+  metric_name         = "EngineCPUUtilization"
   namespace           = "AWS/ElastiCache"
   period              = var.engine_cpu_utilization_too_high-period
   statistic           = "Average"
@@ -76,7 +76,7 @@ resource "aws_cloudwatch_metric_alarm" "memory_utilization_too_high" {
   alarm_name          = "[${title(local.alarm_name_prefix)}] elasticache-${element(var.cache_cluster_id, count.index)}-MemoryUtilizationTooHigh"
   comparison_operator = var.memory_utilization_too_high-comparison_operator
   evaluation_periods  = var.memory_utilization_too_high-datapoint
-  metric_name         = "CPUUtilization"
+  metric_name         = "DatabaseMemoryUsagePercentage"
   namespace           = "AWS/ElastiCache"
   period              = var.memory_utilization_too_high-period
   statistic           = "Average"
@@ -91,11 +91,11 @@ resource "aws_cloudwatch_metric_alarm" "memory_utilization_too_high" {
 }
 
 resource "aws_cloudwatch_metric_alarm" "swap_usage_too_high" {
-  count               = var.memory_utilization_too_high-alarm == "true" ? length(var.cache_cluster_id) : 0
+  count               = var.swap_usage_too_high-alarm == "true" ? length(var.cache_cluster_id) : 0
   alarm_name          = "[${title(local.alarm_name_prefix)}] elasticache-${element(var.cache_cluster_id, count.index)}-SwapUsageTooHigh"
   comparison_operator = var.swap_usage_too_high-comparison_operator
   evaluation_periods  = var.swap_usage_too_high-datapoint
-  metric_name         = "CPUUtilization"
+  metric_name         = "SwapUsage"
   namespace           = "AWS/ElastiCache"
   period              = var.swap_usage_too_high-period
   statistic           = "Average"
@@ -114,12 +114,12 @@ resource "aws_cloudwatch_metric_alarm" "evictions_too_high" {
   alarm_name          = "[${title(local.alarm_name_prefix)}] elasticache-${element(var.cache_cluster_id, count.index)}-EvictionsTooHigh"
   comparison_operator = var.evictions_too_high-comparison_operator
   evaluation_periods  = var.evictions_too_high-datapoint
-  metric_name         = "CPUUtilization"
+  metric_name         = "Evictions"
   namespace           = "AWS/ElastiCache"
   period              = var.evictions_too_high-period
-  statistic           = "Average"
+  statistic           = "Sum"
   threshold           = local.thresholds["EvictionsThreshold"]
-  alarm_description   = "Average Evictions over last ${var.evictions_too_high-period} seconds too high"
+  alarm_description   = "Sum of evictions over last ${var.evictions_too_high-period} seconds too high"
   alarm_actions       = var.sns_topic_arn
   ok_actions          = var.sns_topic_arn
   tags                = var.tags
