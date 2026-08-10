@@ -28,7 +28,8 @@ Data: 2026-08-10 BRT. Autor da aprovação do plano: Caio Henrique.
 - Fixture Redis com dois IDs: 16 alarmes, incluindo EngineCPU e bandwidth; memória usa `DatabaseMemoryUsagePercentage`.
 - Os endereços internos continuam `aws_cloudwatch_metric_alarm.<nome>[index]`, sem `for_each`, `moved` ou mudança de cardinalidade para os caminhos cobertos.
 - Snapshots pós-plan estão em `docs/migration/fase2/`; os baselines correspondentes estão em `docs/migration/fase1/`.
+- A PR #1 executou o workflow remoto `validate` com sucesso (run `31426271829`). A proteção clássica de `main` está ativa, exigindo PR, uma aprovação, check `validate`, sem force-push/deleção e com admins sujeitos à proteção.
 
 ## Gate pendente
 
-Não foi aberto merge para `main`, não foi executada publicação no Terraform Registry, e nenhuma origem GitLab foi arquivada. A confirmação separada de irreversibilidade solicitada pelo operador é necessária antes do merge que dispara o Semantic Release/Registry. A proteção de `main`, PR, Registry e arquivamento permanecem pendentes por esse gate.
+Não foi executado merge para `main`, não foi executada publicação no Terraform Registry, e nenhuma origem GitLab foi arquivada. A confirmação separada de irreversibilidade solicitada pelo operador é necessária antes do merge que dispara o Semantic Release/Registry. Ruleset da organização/GitHub App, aprovação humana da PR, Registry e arquivamento permanecem pendentes.
