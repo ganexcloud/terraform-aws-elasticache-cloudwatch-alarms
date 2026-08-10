@@ -1,0 +1,30 @@
+{
+  "SchemaVersion": 2,
+  "Trivy": {
+    "Version": "0.73.0"
+  },
+  "ReportID": "019fed29-3151-7cd5-a3ba-a98481937d8a",
+  "CreatedAt": "2026-08-10T16:32:07.63384295-03:00",
+  "ArtifactID": "sha256:d445cf29aba9844f93c318b082cc18e3503a7381dbb2a8f24ca323241d9808c1",
+  "ArtifactName": "/home/caio/git/ganex/public/terraform/terraform-aws-elasticache-redis-cloudwatch-alarms",
+  "ArtifactType": "repository",
+  "Metadata": {
+    "RepoURL": "https://gitlab.com/ganex-cloud/terraform/terraform-aws-elasticache-redis-cloudwatch-alarms.git",
+    "Branch": "master",
+    "Commit": "d2ffdb33a96072041c903685ec7c5f067840964a",
+    "CommitMsg": "Merge branch 'fix/repair-elasticache-alarms-cda-51963' into 'master'\n\nfix(elasticache): repair cloudwatch alarm metrics (CDA-51963)\n\nSee merge request ganex-cloud/terraform/terraform-aws-elasticache-redis-cloudwatch-alarms!2",
+    "Author": "Ganex Support Admin \u003csupport-admin@ganex.com.br\u003e",
+    "Committer": "Ganex Support Admin \u003csupport-admin@ganex.com.br\u003e"
+  },
+  "Results": [
+    {
+      "Target": ".",
+      "Class": "config",
+      "Type": "terraform",
+      "MisconfSummary": {
+        "Successes": 51,
+        "Failures": 0
+      }
+    }
+  ]
+}

@@ -1,0 +1,39 @@
+{
+  "SchemaVersion": 2,
+  "Trivy": {
+    "Version": "0.73.0"
+  },
+  "ReportID": "019fed29-1d3e-75ec-9655-6c46036b0ba1",
+  "CreatedAt": "2026-08-10T16:32:02.494389891-03:00",
+  "ArtifactID": "sha256:16fc213e292bf2c719464df9da1382807c1c4cab24d300b9ffc32bbf6fe5536d",
+  "ArtifactName": "/home/caio/git/ganex/public/terraform/terraform-aws-elasticache-memcached-cloudwatch-alarms",
+  "ArtifactType": "repository",
+  "Metadata": {
+    "RepoURL": "https://gitlab.com/ganex-cloud/terraform/terraform-aws-elasticache-memcached-cloudwatch-alarms.git",
+    "Branch": "master",
+    "Commit": "09cee6d8da030f8ba5fed67cc9087b952112286b",
+    "CommitMsg": "Add initial files",
+    "Author": "Caio Henrique \u003ccaio@ganex.com.br\u003e",
+    "Committer": "Caio Henrique \u003ccaio@ganex.com.br\u003e"
+  },
+  "Results": [
+    {
+      "Target": ".",
+      "Class": "config",
+      "Type": "terraform",
+      "MisconfSummary": {
+        "Successes": 51,
+        "Failures": 0
+      }
+    },
+    {
+      "Target": "examples",
+      "Class": "config",
+      "Type": "terraform",
+      "MisconfSummary": {
+        "Successes": 51,
+        "Failures": 0
+      }
+    }
+  ]
+}

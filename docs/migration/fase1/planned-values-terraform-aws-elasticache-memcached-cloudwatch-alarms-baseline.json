@@ -1,0 +1,596 @@
+{
+  "root_module": {
+    "resources": [
+      {
+        "address": "aws_cloudwatch_metric_alarm.cpu_utilization_too_high[0]",
+        "identity": {
+          "account_id": null,
+          "alarm_name": null,
+          "region": null
+        },
+        "identity_schema_version": 0,
+        "index": 0,
+        "mode": "managed",
+        "name": "cpu_utilization_too_high",
+        "provider_name": "registry.terraform.io/hashicorp/aws",
+        "schema_version": 1,
+        "sensitive_values": {
+          "alarm_actions": [
+            false
+          ],
+          "dimensions": {},
+          "evaluation_criteria": [],
+          "metric_query": [],
+          "ok_actions": [
+            false
+          ],
+          "tags_all": {}
+        },
+        "type": "aws_cloudwatch_metric_alarm",
+        "values": {
+          "actions_enabled": true,
+          "alarm_actions": [
+            "arn:aws:sns:us-east-1:123456789012:alerts"
+          ],
+          "alarm_description": "Average CPU utilization over last 300 seconds too high",
+          "alarm_name": "[Ganex] elasticache-cache-a-CPUUtilizationTooHigh",
+          "comparison_operator": "GreaterThanThreshold",
+          "datapoints_to_alarm": null,
+          "dimensions": {
+            "CacheClusterId": "cache-a"
+          },
+          "evaluation_criteria": [],
+          "evaluation_interval": null,
+          "evaluation_periods": 1,
+          "extended_statistic": null,
+          "insufficient_data_actions": null,
+          "metric_name": "CPUUtilization",
+          "metric_query": [],
+          "namespace": "AWS/ElastiCache",
+          "ok_actions": [
+            "arn:aws:sns:us-east-1:123456789012:alerts"
+          ],
+          "period": 300,
+          "region": "us-east-1",
+          "statistic": "Average",
+          "tags": null,
+          "threshold": 90,
+          "threshold_metric_id": null,
+          "treat_missing_data": "missing",
+          "unit": null
+        }
+      },
+      {
+        "address": "aws_cloudwatch_metric_alarm.cpu_utilization_too_high[1]",
+        "identity": {
+          "account_id": null,
+          "alarm_name": null,
+          "region": null
+        },
+        "identity_schema_version": 0,
+        "index": 1,
+        "mode": "managed",
+        "name": "cpu_utilization_too_high",
+        "provider_name": "registry.terraform.io/hashicorp/aws",
+        "schema_version": 1,
+        "sensitive_values": {
+          "alarm_actions": [
+            false
+          ],
+          "dimensions": {},
+          "evaluation_criteria": [],
+          "metric_query": [],
+          "ok_actions": [
+            false
+          ],
+          "tags_all": {}
+        },
+        "type": "aws_cloudwatch_metric_alarm",
+        "values": {
+          "actions_enabled": true,
+          "alarm_actions": [
+            "arn:aws:sns:us-east-1:123456789012:alerts"
+          ],
+          "alarm_description": "Average CPU utilization over last 300 seconds too high",
+          "alarm_name": "[Ganex] elasticache-cache-b-CPUUtilizationTooHigh",
+          "comparison_operator": "GreaterThanThreshold",
+          "datapoints_to_alarm": null,
+          "dimensions": {
+            "CacheClusterId": "cache-b"
+          },
+          "evaluation_criteria": [],
+          "evaluation_interval": null,
+          "evaluation_periods": 1,
+          "extended_statistic": null,
+          "insufficient_data_actions": null,
+          "metric_name": "CPUUtilization",
+          "metric_query": [],
+          "namespace": "AWS/ElastiCache",
+          "ok_actions": [
+            "arn:aws:sns:us-east-1:123456789012:alerts"
+          ],
+          "period": 300,
+          "region": "us-east-1",
+          "statistic": "Average",
+          "tags": null,
+          "threshold": 90,
+          "threshold_metric_id": null,
+          "treat_missing_data": "missing",
+          "unit": null
+        }
+      },
+      {
+        "address": "aws_cloudwatch_metric_alarm.currconnections_too_high[0]",
+        "identity": {
+          "account_id": null,
+          "alarm_name": null,
+          "region": null
+        },
+        "identity_schema_version": 0,
+        "index": 0,
+        "mode": "managed",
+        "name": "currconnections_too_high",
+        "provider_name": "registry.terraform.io/hashicorp/aws",
+        "schema_version": 1,
+        "sensitive_values": {
+          "alarm_actions": [
+            false
+          ],
+          "dimensions": {},
+          "evaluation_criteria": [],
+          "metric_query": [],
+          "ok_actions": [
+            false
+          ],
+          "tags_all": {}
+        },
+        "type": "aws_cloudwatch_metric_alarm",
+        "values": {
+          "actions_enabled": true,
+          "alarm_actions": [
+            "arn:aws:sns:us-east-1:123456789012:alerts"
+          ],
+          "alarm_description": "Average Current Connections have been greater than 4000 for at least 1 seconds",
+          "alarm_name": "[Ganex] elasticache-cache-a-CurrConnectionsTooHigh",
+          "comparison_operator": "GreaterThanThreshold",
+          "datapoints_to_alarm": null,
+          "dimensions": {
+            "CacheClusterId": "cache-a"
+          },
+          "evaluation_criteria": [],
+          "evaluation_interval": null,
+          "evaluation_periods": 1,
+          "extended_statistic": null,
+          "insufficient_data_actions": null,
+          "metric_name": "CurrConnections",
+          "metric_query": [],
+          "namespace": "AWS/ElastiCache",
+          "ok_actions": [
+            "arn:aws:sns:us-east-1:123456789012:alerts"
+          ],
+          "period": 300,
+          "region": "us-east-1",
+          "statistic": "Average",
+          "tags": null,
+          "threshold": 4000,
+          "threshold_metric_id": null,
+          "treat_missing_data": "missing",
+          "unit": null
+        }
+      },
+      {
+        "address": "aws_cloudwatch_metric_alarm.currconnections_too_high[1]",
+        "identity": {
+          "account_id": null,
+          "alarm_name": null,
+          "region": null
+        },
+        "identity_schema_version": 0,
+        "index": 1,
+        "mode": "managed",
+        "name": "currconnections_too_high",
+        "provider_name": "registry.terraform.io/hashicorp/aws",
+        "schema_version": 1,
+        "sensitive_values": {
+          "alarm_actions": [
+            false
+          ],
+          "dimensions": {},
+          "evaluation_criteria": [],
+          "metric_query": [],
+          "ok_actions": [
+            false
+          ],
+          "tags_all": {}
+        },
+        "type": "aws_cloudwatch_metric_alarm",
+        "values": {
+          "actions_enabled": true,
+          "alarm_actions": [
+            "arn:aws:sns:us-east-1:123456789012:alerts"
+          ],
+          "alarm_description": "Average Current Connections have been greater than 4000 for at least 1 seconds",
+          "alarm_name": "[Ganex] elasticache-cache-b-CurrConnectionsTooHigh",
+          "comparison_operator": "GreaterThanThreshold",
+          "datapoints_to_alarm": null,
+          "dimensions": {
+            "CacheClusterId": "cache-b"
+          },
+          "evaluation_criteria": [],
+          "evaluation_interval": null,
+          "evaluation_periods": 1,
+          "extended_statistic": null,
+          "insufficient_data_actions": null,
+          "metric_name": "CurrConnections",
+          "metric_query": [],
+          "namespace": "AWS/ElastiCache",
+          "ok_actions": [
+            "arn:aws:sns:us-east-1:123456789012:alerts"
+          ],
+          "period": 300,
+          "region": "us-east-1",
+          "statistic": "Average",
+          "tags": null,
+          "threshold": 4000,
+          "threshold_metric_id": null,
+          "treat_missing_data": "missing",
+          "unit": null
+        }
+      },
+      {
+        "address": "aws_cloudwatch_metric_alarm.evictions_too_high[0]",
+        "identity": {
+          "account_id": null,
+          "alarm_name": null,
+          "region": null
+        },
+        "identity_schema_version": 0,
+        "index": 0,
+        "mode": "managed",
+        "name": "evictions_too_high",
+        "provider_name": "registry.terraform.io/hashicorp/aws",
+        "schema_version": 1,
+        "sensitive_values": {
+          "alarm_actions": [
+            false
+          ],
+          "dimensions": {},
+          "evaluation_criteria": [],
+          "metric_query": [],
+          "ok_actions": [
+            false
+          ],
+          "tags_all": {}
+        },
+        "type": "aws_cloudwatch_metric_alarm",
+        "values": {
+          "actions_enabled": true,
+          "alarm_actions": [
+            "arn:aws:sns:us-east-1:123456789012:alerts"
+          ],
+          "alarm_description": "Average Evictions over last 600 seconds too high",
+          "alarm_name": "[Ganex] elasticache-cache-a-EvictionsTooHigh",
+          "comparison_operator": "GreaterThanThreshold",
+          "datapoints_to_alarm": null,
+          "dimensions": {
+            "CacheClusterId": "cache-a"
+          },
+          "evaluation_criteria": [],
+          "evaluation_interval": null,
+          "evaluation_periods": 1,
+          "extended_statistic": null,
+          "insufficient_data_actions": null,
+          "metric_name": "CPUUtilization",
+          "metric_query": [],
+          "namespace": "AWS/ElastiCache",
+          "ok_actions": [
+            "arn:aws:sns:us-east-1:123456789012:alerts"
+          ],
+          "period": 600,
+          "region": "us-east-1",
+          "statistic": "Average",
+          "tags": null,
+          "threshold": 100,
+          "threshold_metric_id": null,
+          "treat_missing_data": "missing",
+          "unit": null
+        }
+      },
+      {
+        "address": "aws_cloudwatch_metric_alarm.evictions_too_high[1]",
+        "identity": {
+          "account_id": null,
+          "alarm_name": null,
+          "region": null
+        },
+        "identity_schema_version": 0,
+        "index": 1,
+        "mode": "managed",
+        "name": "evictions_too_high",
+        "provider_name": "registry.terraform.io/hashicorp/aws",
+        "schema_version": 1,
+        "sensitive_values": {
+          "alarm_actions": [
+            false
+          ],
+          "dimensions": {},
+          "evaluation_criteria": [],
+          "metric_query": [],
+          "ok_actions": [
+            false
+          ],
+          "tags_all": {}
+        },
+        "type": "aws_cloudwatch_metric_alarm",
+        "values": {
+          "actions_enabled": true,
+          "alarm_actions": [
+            "arn:aws:sns:us-east-1:123456789012:alerts"
+          ],
+          "alarm_description": "Average Evictions over last 600 seconds too high",
+          "alarm_name": "[Ganex] elasticache-cache-b-EvictionsTooHigh",
+          "comparison_operator": "GreaterThanThreshold",
+          "datapoints_to_alarm": null,
+          "dimensions": {
+            "CacheClusterId": "cache-b"
+          },
+          "evaluation_criteria": [],
+          "evaluation_interval": null,
+          "evaluation_periods": 1,
+          "extended_statistic": null,
+          "insufficient_data_actions": null,
+          "metric_name": "CPUUtilization",
+          "metric_query": [],
+          "namespace": "AWS/ElastiCache",
+          "ok_actions": [
+            "arn:aws:sns:us-east-1:123456789012:alerts"
+          ],
+          "period": 600,
+          "region": "us-east-1",
+          "statistic": "Average",
+          "tags": null,
+          "threshold": 100,
+          "threshold_metric_id": null,
+          "treat_missing_data": "missing",
+          "unit": null
+        }
+      },
+      {
+        "address": "aws_cloudwatch_metric_alarm.memory_utilization_too_high[0]",
+        "identity": {
+          "account_id": null,
+          "alarm_name": null,
+          "region": null
+        },
+        "identity_schema_version": 0,
+        "index": 0,
+        "mode": "managed",
+        "name": "memory_utilization_too_high",
+        "provider_name": "registry.terraform.io/hashicorp/aws",
+        "schema_version": 1,
+        "sensitive_values": {
+          "alarm_actions": [
+            false
+          ],
+          "dimensions": {},
+          "evaluation_criteria": [],
+          "metric_query": [],
+          "ok_actions": [
+            false
+          ],
+          "tags_all": {}
+        },
+        "type": "aws_cloudwatch_metric_alarm",
+        "values": {
+          "actions_enabled": true,
+          "alarm_actions": [
+            "arn:aws:sns:us-east-1:123456789012:alerts"
+          ],
+          "alarm_description": "Average Memory utilization over last 300 seconds too high",
+          "alarm_name": "[Ganex] elasticache-cache-a-MemoryUtilizationTooHigh",
+          "comparison_operator": "GreaterThanThreshold",
+          "datapoints_to_alarm": null,
+          "dimensions": {
+            "CacheClusterId": "cache-a"
+          },
+          "evaluation_criteria": [],
+          "evaluation_interval": null,
+          "evaluation_periods": 1,
+          "extended_statistic": null,
+          "insufficient_data_actions": null,
+          "metric_name": "CPUUtilization",
+          "metric_query": [],
+          "namespace": "AWS/ElastiCache",
+          "ok_actions": [
+            "arn:aws:sns:us-east-1:123456789012:alerts"
+          ],
+          "period": 300,
+          "region": "us-east-1",
+          "statistic": "Average",
+          "tags": null,
+          "threshold": 90,
+          "threshold_metric_id": null,
+          "treat_missing_data": "missing",
+          "unit": null
+        }
+      },
+      {
+        "address": "aws_cloudwatch_metric_alarm.memory_utilization_too_high[1]",
+        "identity": {
+          "account_id": null,
+          "alarm_name": null,
+          "region": null
+        },
+        "identity_schema_version": 0,
+        "index": 1,
+        "mode": "managed",
+        "name": "memory_utilization_too_high",
+        "provider_name": "registry.terraform.io/hashicorp/aws",
+        "schema_version": 1,
+        "sensitive_values": {
+          "alarm_actions": [
+            false
+          ],
+          "dimensions": {},
+          "evaluation_criteria": [],
+          "metric_query": [],
+          "ok_actions": [
+            false
+          ],
+          "tags_all": {}
+        },
+        "type": "aws_cloudwatch_metric_alarm",
+        "values": {
+          "actions_enabled": true,
+          "alarm_actions": [
+            "arn:aws:sns:us-east-1:123456789012:alerts"
+          ],
+          "alarm_description": "Average Memory utilization over last 300 seconds too high",
+          "alarm_name": "[Ganex] elasticache-cache-b-MemoryUtilizationTooHigh",
+          "comparison_operator": "GreaterThanThreshold",
+          "datapoints_to_alarm": null,
+          "dimensions": {
+            "CacheClusterId": "cache-b"
+          },
+          "evaluation_criteria": [],
+          "evaluation_interval": null,
+          "evaluation_periods": 1,
+          "extended_statistic": null,
+          "insufficient_data_actions": null,
+          "metric_name": "CPUUtilization",
+          "metric_query": [],
+          "namespace": "AWS/ElastiCache",
+          "ok_actions": [
+            "arn:aws:sns:us-east-1:123456789012:alerts"
+          ],
+          "period": 300,
+          "region": "us-east-1",
+          "statistic": "Average",
+          "tags": null,
+          "threshold": 90,
+          "threshold_metric_id": null,
+          "treat_missing_data": "missing",
+          "unit": null
+        }
+      },
+      {
+        "address": "aws_cloudwatch_metric_alarm.swap_usage_too_high[0]",
+        "identity": {
+          "account_id": null,
+          "alarm_name": null,
+          "region": null
+        },
+        "identity_schema_version": 0,
+        "index": 0,
+        "mode": "managed",
+        "name": "swap_usage_too_high",
+        "provider_name": "registry.terraform.io/hashicorp/aws",
+        "schema_version": 1,
+        "sensitive_values": {
+          "alarm_actions": [
+            false
+          ],
+          "dimensions": {},
+          "evaluation_criteria": [],
+          "metric_query": [],
+          "ok_actions": [
+            false
+          ],
+          "tags_all": {}
+        },
+        "type": "aws_cloudwatch_metric_alarm",
+        "values": {
+          "actions_enabled": true,
+          "alarm_actions": [
+            "arn:aws:sns:us-east-1:123456789012:alerts"
+          ],
+          "alarm_description": "Average Swap usage over last 600 seconds too high",
+          "alarm_name": "[Ganex] elasticache-cache-a-SwapUsageTooHigh",
+          "comparison_operator": "GreaterThanThreshold",
+          "datapoints_to_alarm": null,
+          "dimensions": {
+            "CacheClusterId": "cache-a"
+          },
+          "evaluation_criteria": [],
+          "evaluation_interval": null,
+          "evaluation_periods": 1,
+          "extended_statistic": null,
+          "insufficient_data_actions": null,
+          "metric_name": "CPUUtilization",
+          "metric_query": [],
+          "namespace": "AWS/ElastiCache",
+          "ok_actions": [
+            "arn:aws:sns:us-east-1:123456789012:alerts"
+          ],
+          "period": 600,
+          "region": "us-east-1",
+          "statistic": "Average",
+          "tags": null,
+          "threshold": 256000000,
+          "threshold_metric_id": null,
+          "treat_missing_data": "missing",
+          "unit": null
+        }
+      },
+      {
+        "address": "aws_cloudwatch_metric_alarm.swap_usage_too_high[1]",
+        "identity": {
+          "account_id": null,
+          "alarm_name": null,
+          "region": null
+        },
+        "identity_schema_version": 0,
+        "index": 1,
+        "mode": "managed",
+        "name": "swap_usage_too_high",
+        "provider_name": "registry.terraform.io/hashicorp/aws",
+        "schema_version": 1,
+        "sensitive_values": {
+          "alarm_actions": [
+            false
+          ],
+          "dimensions": {},
+          "evaluation_criteria": [],
+          "metric_query": [],
+          "ok_actions": [
+            false
+          ],
+          "tags_all": {}
+        },
+        "type": "aws_cloudwatch_metric_alarm",
+        "values": {
+          "actions_enabled": true,
+          "alarm_actions": [
+            "arn:aws:sns:us-east-1:123456789012:alerts"
+          ],
+          "alarm_description": "Average Swap usage over last 600 seconds too high",
+          "alarm_name": "[Ganex] elasticache-cache-b-SwapUsageTooHigh",
+          "comparison_operator": "GreaterThanThreshold",
+          "datapoints_to_alarm": null,
+          "dimensions": {
+            "CacheClusterId": "cache-b"
+          },
+          "evaluation_criteria": [],
+          "evaluation_interval": null,
+          "evaluation_periods": 1,
+          "extended_statistic": null,
+          "insufficient_data_actions": null,
+          "metric_name": "CPUUtilization",
+          "metric_query": [],
+          "namespace": "AWS/ElastiCache",
+          "ok_actions": [
+            "arn:aws:sns:us-east-1:123456789012:alerts"
+          ],
+          "period": 600,
+          "region": "us-east-1",
+          "statistic": "Average",
+          "tags": null,
+          "threshold": 256000000,
+          "threshold_metric_id": null,
+          "treat_missing_data": "missing",
+          "unit": null
+        }
+      }
+    ]
+  }
+}
