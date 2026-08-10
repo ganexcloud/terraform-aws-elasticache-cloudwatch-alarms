@@ -28,7 +28,7 @@ Data: 2026-08-10 BRT. Autor da aprovação do plano: Caio Henrique.
 - Fixture Redis com dois IDs: 16 alarmes, incluindo EngineCPU e bandwidth; memória usa `DatabaseMemoryUsagePercentage`.
 - Os endereços internos continuam `aws_cloudwatch_metric_alarm.<nome>[index]`, sem `for_each`, `moved` ou mudança de cardinalidade para os caminhos cobertos.
 - Snapshots pós-plan estão em `docs/migration/fase2/`; os baselines correspondentes estão em `docs/migration/fase1/`.
-- A PR #1 executou o workflow remoto `validate` com sucesso (run `31426271829`). A proteção clássica de `main` está ativa, exigindo PR, uma aprovação, check `validate`, sem force-push/deleção e com admins sujeitos à proteção.
+- A PR #1 executou o workflow remoto `validate` com sucesso (runs `31426271829` e `31426422759`). A proteção clássica de `main` está ativa, exigindo PR e check `validate`, sem force-push/deleção e com admins sujeitos à proteção; não há aprovação adicional obrigatória.
 
 ## Gate pendente
 
