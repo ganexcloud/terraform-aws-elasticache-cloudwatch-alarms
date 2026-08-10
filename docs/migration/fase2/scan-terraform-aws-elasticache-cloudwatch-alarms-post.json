@@ -1,0 +1,30 @@
+{
+  "SchemaVersion": 2,
+  "Trivy": {
+    "Version": "0.73.0"
+  },
+  "ReportID": "019fed3a-532d-7d06-9e11-cd93a7ba9bd8",
+  "CreatedAt": "2026-08-10T16:50:50.413855221-03:00",
+  "ArtifactID": "sha256:b82655c02e63bbc5a1db181834e3e86782a698834ff247283948f90bd0885f00",
+  "ArtifactName": ".",
+  "ArtifactType": "repository",
+  "Metadata": {
+    "RepoURL": "https://github.com/ganexcloud/terraform-aws-elasticache-cloudwatch-alarms.git",
+    "Branch": "modernize/elasticache-alarms",
+    "Commit": "3b6340dbe19c79eb0685d5c99238dad7abcdc5c9",
+    "CommitMsg": "chore: establish consolidated module baseline",
+    "Author": "caiohasouza \u003ccaio@ganex.com.br\u003e",
+    "Committer": "caiohasouza \u003ccaio@ganex.com.br\u003e"
+  },
+  "Results": [
+    {
+      "Target": "examples",
+      "Class": "config",
+      "Type": "terraform",
+      "MisconfSummary": {
+        "Successes": 51,
+        "Failures": 0
+      }
+    }
+  ]
+}

@@ -18,7 +18,7 @@ Desvio explícito da migração de uma única origem: o destino preservará os d
 ## 1. Resumo da decisao
 
 - Estratégia: consolidar Memcached e Redis em `terraform-aws-elasticache-cloudwatch-alarms`.
-- Aprovação do gate: pendente.
+- Aprovação do gate: aprovada explicitamente por Caio Henrique em 2026-08-10 BRT para executar somente a Fase 2 deste plano e do TODO vinculado. A publicação no Terraform Registry continua condicionada a confirmação humana separada antes do merge.
 - Visibilidade: pública, compatível com Terraform Registry.
 - Política GitLab: arquivar ambas as origens somente após `v1.0.0` confirmada no Registry, clone anônimo verde e preflights administrativos aprovados.
 - O módulo oficial CloudWatch foi descartado porque oferece alarmes genéricos e não o conjunto ElastiCache padronizado por engine.
@@ -51,7 +51,7 @@ Não aplicável. A decisão é `MANTER_GANEX` porque o contrato de criar o conju
 
 ## 5. Passos de execucao (comandos exatos, em ordem)
 
-1. Registrar aprovação humana explícita deste plano, com autor, data e escopo. Criar repositório GitHub público somente depois de confirmar sua inexistência.
+1. Aprovação registrada; repositório GitHub público criado somente após confirmar sua inexistência.
 2. Preservar os dois históricos em clone efêmero. Criar o repositório público vazio, criar `main` a partir do Memcached, mesclar somente o histórico Redis com estratégia `ours` e registrar os dois SHAs em `MIGRATION-SOURCES.md`. Isso preserva objetos e ancestrais sem mesclar HCL legado incompatível no root:
 
 ```sh
@@ -88,17 +88,17 @@ rtk gh repo edit ganexcloud/terraform-aws-elasticache-cloudwatch-alarms --defaul
 
 ## 7. Definition of Done
 
-- [ ] Dois históricos preservados e fontes/SHAs documentados no baseline consolidado.
+- [x] Dois históricos preservados e fontes/SHAs documentados no baseline consolidado.
 - [x] Dois `planned_values` baseline gerados em fixture offline, prontos para o delta pós-mudança.
 - [x] Trivy `0.73.0` executado nas duas baselines, com versão e bundle registrados.
-- [ ] Template canônico e constraints aplicados.
-- [ ] União compatível das interfaces Memcached e Redis, com `engine` e aliases documentados.
-- [ ] Catálogo de métricas impede combinações incompatíveis por engine.
-- [ ] Correções Memcached implementadas, incluindo precondition do threshold de `BytesUsedForCacheItems`, testadas e declaradas nas release notes.
-- [ ] Deltas de interface, comportamento, scanner e state verdes ou explicitamente aprovados.
+- [x] Template canônico e constraints aplicados.
+- [x] União compatível das interfaces Memcached e Redis, com `engine` e aliases documentados.
+- [x] Catálogo de métricas impede combinações incompatíveis por engine.
+- [x] Correções Memcached implementadas, incluindo precondition do threshold de `BytesUsedForCacheItems`, testadas e declaradas nas release notes.
+- [x] Deltas de interface, comportamento, scanner e state verdes ou explicitamente aprovados.
 - [ ] PR, ruleset, App, baseline, release automática e Registry confirmados.
 - [ ] Dois GitLab arquivados somente após preflights e Registry.
-- [ ] Gate de plano e confirmação de irreversibilidade registrados separadamente.
+- [x] Gate de plano registrado; confirmação de irreversibilidade ainda pendente e deliberadamente não executada.
 - [ ] `status.md` atualizado uma única vez ao final.
 
 ## 8. Rollback
