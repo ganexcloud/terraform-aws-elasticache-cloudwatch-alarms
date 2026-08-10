@@ -20,14 +20,14 @@ variable "alarm_name_prefix" {
 }
 
 variable "id" {
-  description = "Legacy Memcached alias for the cache cluster IDs. Set exactly one of id or cache_cluster_id."
+  description = "Memcached cache cluster IDs. Set exactly one of id or cache_cluster_id."
   type        = list(string)
   default     = null
   nullable    = true
 }
 
 variable "cache_cluster_id" {
-  description = "Legacy Redis alias for the cache cluster IDs. Set exactly one of cache_cluster_id or id."
+  description = "Redis cache cluster IDs. Set exactly one of cache_cluster_id or id."
   type        = list(string)
   default     = null
   nullable    = true
