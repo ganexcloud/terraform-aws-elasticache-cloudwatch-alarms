@@ -14,15 +14,13 @@ module "elasticache_alarms" {
 }
 ```
 
-Set `engine = "memcached"` and use the legacy `id` alias for Memcached consumers. Memcached memory alarms use `BytesUsedForCacheItems` and require `memcached_bytes_used_for_cache_items_threshold` in bytes. Redis-only Engine CPU and network bandwidth alarms are not created for Memcached.
+Set `engine = "memcached"` and use `id` for Memcached clusters. Memcached memory alarms use `BytesUsedForCacheItems` and require `memcached_bytes_used_for_cache_items_threshold` in bytes. Redis-only Engine CPU and network bandwidth alarms are not created for Memcached.
 
-The module keeps the legacy resource names and `count` indexing so a consumer can keep its module label while migrating. Set exactly one of `id` or `cache_cluster_id`; both aliases are accepted during the first consolidated release.
+Alarm resources use stable names and `count` indexing. Set exactly one of `id` or `cache_cluster_id`.
 
-## Compatibility and release notes
+## Release notes
 
-This is a consolidated successor to the legacy Memcached and Redis modules. The Memcached Swap, Evictions, and memory alarms now use `SwapUsage`, `Evictions` with `Sum`, and `BytesUsedForCacheItems` respectively. The byte threshold is intentionally explicit; `memory_utilization_threshold` is not converted implicitly.
-
-The Phase 1 plan, TODO, baselines, and evidence are preserved under [`docs/migration`](docs/migration/).
+Memcached Swap, Evictions, and memory alarms use `SwapUsage`, `Evictions` with `Sum`, and `BytesUsedForCacheItems` respectively. The byte threshold is intentionally explicit; `memory_utilization_threshold` is not converted implicitly.
 
 ## Validation
 

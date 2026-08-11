@@ -1,1 +1,1 @@
-# This module preserves the legacy modules' no-output contract.
+# This module intentionally has no outputs.
